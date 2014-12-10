@@ -136,7 +136,7 @@ class PrettyPageHandler extends Handler
 
 				// Get only the custom attributes on exception
 				$ex = (array) $inspector->getException();
-				$e = array_filter(array_keys($ex), function($k){ return preg_match('/^((?!message|Exception|errorInfo|code|file|line).)*$/s', $k); });
+				$e = array_filter(array_keys($ex), function($k){ return preg_match('/^((?!message|Exception|errorInfo|code|file|line|severity).)*$/s', $k); });
 				$extra_info = array_intersect_key($ex, array_flip($e));
 
         // List of variables that will be passed to the layout template.
